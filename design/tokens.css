@@ -1,0 +1,61 @@
+/* Finance Pi — design tokens.
+   Loaded by dashboard.py and injected into Streamlit at startup. */
+
+:root {
+    /* Colors */
+    --color-bg:        #0e1117;
+    --color-surface:   #1e2530;
+    --color-border:    #2a3340;
+    --color-text:      #e8eaed;
+    --color-text-mute: #9aa0a6;
+
+    --color-positive:  #4caf6f;   /* desaturated green for income / gains */
+    --color-negative:  #d96666;   /* desaturated red for spending / losses */
+    --color-neutral:   #7ab0e0;   /* blue for transfers / neutral info */
+    --color-accent:    #f4b942;   /* amber for warnings / "needs attention" */
+
+    /* Category-specific (matches the SQL `categories` table) */
+    --cat-groceries:   #8dc63f;
+    --cat-fuel:        #ff8a4c;
+    --cat-utilities:   #5fb8e8;
+    --cat-housing:     #9b7fe0;
+    --cat-car:         #ff8a4c;
+    --cat-leisure:     #f4b942;
+    --cat-investment:  #4caf6f;
+
+    /* Typography */
+    --font-tabular:    "Source Sans Pro", system-ui, sans-serif;
+    --font-numbers:    "JetBrains Mono", "SF Mono", "Cascadia Code", monospace;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+/* Make metric values use tabular numbers so columns of euros align */
+[data-testid="stMetricValue"] {
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-tabular);
+    font-weight: 600;
+}
+
+/* Subtle borders on metric cards */
+[data-testid="stMetric"] {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background: var(--color-surface);
+}
+
+/* Tighter spacing in dataframes */
+[data-testid="stDataFrame"] {
+    font-size: 0.9em;
+}
