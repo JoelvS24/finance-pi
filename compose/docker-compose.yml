@@ -42,12 +42,18 @@ services:
     image: grafana/grafana:11.0.0
     container_name: finance-grafana
     restart: unless-stopped
+    user: "472:472"
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD}
       GF_INSTALL_PLUGINS: grafana-clock-panel
     volumes:
-      - ../data/grafana:/var/lib/grafana
+      - grafana-storage:/var/lib/grafana
     ports:
       - "3000:3000"
     depends_on:
       - postgres
+
+volumes:
+  grafana-storage:
+    driver: local
+
