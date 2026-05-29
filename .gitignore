@@ -1,0 +1,39 @@
+# Secrets - never commit
+.env
+secrets/.env
+secrets/*.pem
+secrets/*.json
+secrets/pytr/
+secrets/keyfile.pem
+secrets/credentials
+
+# Runtime data
+data/
+backups/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Docker
+.docker/
